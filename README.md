@@ -22,8 +22,116 @@ Before starting, ensure you have the following installed:
 
 ---
 
-## Backend Setup
+## Getting Started
 
-The backend of this project is built using **Express.js** and connected to a **MongoDB** database. It provides APIs to manage and retrieve transactions data.
+### Prerequisites
+- Node.js (>=14.x)
+- MongoDB (Local/Atlas)
+- React (>=17.x)
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/mern-transactions-dashboard.git
+    cd mern-transactions-dashboard
+    ```
+
+2. Install dependencies for both backend and frontend:
+    ```bash
+    npm install
+    ```
+
+3. Set up your MongoDB URI and other environment variables in `.env`.
+
+4. Run the backend:
+    ```bash
+    npm start
+    ```
+
+5. Run the frontend:
+    ```bash
+    cd mern-frontend
+    npm start
+    ```
+
+## Postman API Usage
+
+To test the APIs, you can use Postman. Below are the API endpoints and how to make requests.
+
+### 1. Fetch and Seed Data
+
+**Endpoint**: `/initialize`  
+**Method**: `GET`  
+**Description**: Fetch data from a third-party API and seed the MongoDB database.
+
+**Postman Command**:
+```bash
+GET http://localhost:3000/initialize
+```
+### 2. List Transactions
+
+**Endpoint**: `/initialize`  
+**Method**: `GET`  
+**Description**: Fetch data from a third-party API and seed the MongoDB database.
+
+**Postman Command**:
+```bash
+GET http://localhost:3000/initialize
+```
+### 3. Fetch and Seed Data
+
+**Endpoint**: `/transactions`  
+**Method**: `GET`  
+**Description**: Fetch a paginated list of transactions for the selected month.
+
+**Postman Command**:
+```bash
+GET http://localhost:3000/transactions?page=1&perPage=10&search=yourSearchTerm
+```
+### 4.  Get Statistics
 
 
+**Endpoint**: `/statistics`  
+**Method**: `GET`  
+**Description**: Retrieve total sales amount, total sold items, and total unsold items for the selected month.
+
+**Postman Command**:
+```bash
+GET http://localhost:3000/statistics?month=March
+```
+### 5. Price Chart Data
+
+**Endpoint**: `/price-chart`  
+**Method**: `GET`  
+**Description**: Fetch data for the bar chart displaying price ranges and the number of items sold for the selected month.
+
+**Postman Command**:
+```bash
+GET http://localhost:3000/price-chart?month=March
+
+```
+### 6. Category Chart Data
+
+**Endpoint**: `/category-chart`  
+**Method**: `GET`  
+**Description**: Fetch data for the pie chart showing the distribution of categories for the selected month.
+
+
+**Postman Command**:
+```bash
+GET http://localhost:3000/category-chart?month=March
+
+```
+### 7. Combined Data
+
+**Endpoint**: `/combined`  
+**Method**: `GET`  
+**Description**: Fetch combined statistics, bar chart, and pie chart data for the selected month.
+
+
+**Postman Command**:
+```bash
+GET http://localhost:3000/combined?month=March
+
+```
